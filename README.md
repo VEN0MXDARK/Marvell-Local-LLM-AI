@@ -1,12 +1,12 @@
 # Marvell AI
 
 <p align="center">
-  <img src="screenshot-immersive-voice.png" alt="Marvell AI — Immersive Voice mode" width="850">
+  <img src="screenshot-agent-network.png" alt="Marvell AI — Agent Network, live voice-reactive core" width="850">
 </p>
 
 <p align="center">
   <img alt="platform" src="https://img.shields.io/badge/platform-Windows-0078D4?style=flat-square&logo=windows">
-  <img alt="version" src="https://img.shields.io/badge/version-1.8.0-2563eb?style=flat-square">
+  <img alt="version" src="https://img.shields.io/badge/version-1.9.0-2563eb?style=flat-square">
   <img alt="license" src="https://img.shields.io/badge/license-All%20Rights%20Reserved-lightgrey?style=flat-square">
   <img alt="downloads" src="https://img.shields.io/github/downloads/VEN0MXDARK/Marvell-Local-LLM-AI/total?style=flat-square&color=16a34a">
 </p>
@@ -35,7 +35,8 @@ Marvell is an always-on assistant that lives in your system tray and understands
 
 | | |
 |---|---|
-| 🗣️ **Chat & Voice** | Type or talk to it; wake-word and push-to-talk support; an "Immersive Voice" mode with a live audio-reactive 3D visualization for hands-free conversation. |
+| 🗣️ **Chat & Voice** | Type or talk to it; wake-word and push-to-talk support; barge-in (talk over a reply to interrupt it), continuous conversation for natural back-and-forth, and automatic mic calibration to your room. |
+| 🌐 **Agent Network** | A live map of every specialist agent around a central core that reacts to your voice in real time, with per-agent status and real usage history. |
 | 🧠 **Local-first AI** | Runs on a local Ollama model by default (private, no internet needed for basic chat), with an in-app model downloader and an optional Gemini fallback for tougher questions. |
 | 💬 **Messaging** | WhatsApp, Telegram, Slack, Discord — read, reply, and automate. |
 | ✅ **Productivity** | Reminders, calendar, email, notes, habit tracking, journaling, recurring automation rules. |
@@ -47,6 +48,22 @@ Marvell is an always-on assistant that lives in your system tray and understands
 | 🛡️ **Security & wellness** | Breach monitoring, screen-lock automation, secure file shredder, sleep/mood tracking, guided breathing exercises, document expiry reminders. |
 | 🎓 **Learning** | Language tutor with spaced-repetition quizzes, study plans, debate practice, daily trivia. |
 | 📊 **Dashboards** | Usage/cost analytics, model response-time benchmarking, wellness trend correlation. |
+
+## 🆕 What's new in 1.9.0
+
+**Voice**
+- **Real-time voice reaction** — the Agent Network core now responds to your actual voice as you speak, driven by live microphone level rather than a canned animation.
+- **Barge-in** — start talking while Marvell is replying and it stops immediately, instead of talking over you.
+- **Continuous conversation** — it stays listening briefly after a reply, so a follow-up needs no wake word.
+- **Automatic mic calibration** — measures your room's noise floor on mic-on and tunes the speech threshold to it, so it stops cutting you off early in a noisy room.
+- **Offline speech recognition (optional)** — switch `stt_engine` to `offline` to recognise speech locally via faster-whisper: no network, no quota, and nothing leaves your machine. Falls back to the online engine automatically if no local model is installed.
+- Louder replies, and a fix for emoji in a reply silently dropping the voice to a quieter fallback.
+
+**Ad skipping**
+- **YouTube ads are now actually skipped**, automatically. Previously this only announced itself and fired a blind keypress. Videos opened from Marvell now play in its own browser, where it can find and click the real skip button — and run out ads that aren't skippable.
+
+**Fixes**
+- **Marvell no longer starts with Windows unless you ask it to.** An entry left behind by an older build was launching it at every login regardless of the "Launch when Windows starts" checkbox; that entry is now cleaned up and the checkbox genuinely controls it.
 
 ### Privacy controls
 
